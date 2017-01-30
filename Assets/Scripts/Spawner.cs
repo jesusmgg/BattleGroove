@@ -13,6 +13,8 @@ public class Spawner : MonoBehaviour
 
     public GameObject enemySpawner;
 
+    public bool canBeAI;
+
     public Text coreText;
     public Text grooveText;
     public Text incomeText;
@@ -28,6 +30,15 @@ public class Spawner : MonoBehaviour
     {
         incomeTimer = gameObject.AddComponent<Timer>();
         incomeTimer.Start();
+
+        if (canBeAI)
+        {
+            GameObject parameters = GameObject.Find("Parameters");
+            if (parameters.GetComponent<Parameters>().AIPlayer == true)
+            {
+                gameObject.AddComponent<EnemySimpleAI>();
+            }
+        }
     }
 	
     void Update()
@@ -108,6 +119,20 @@ public class Spawner : MonoBehaviour
 
         unit.GetComponent<Unit>().SetDestination(enemySpawner.transform.position);
         unit.GetComponent<Unit>().enemySpawnerPosition = enemySpawner.transform.position;
+    }
+
+    public void LookUp()
+    {
+        currentFacingLane--;
+        if (currentFacingLane > 2) {currentFacingLane = 2;}
+        if (currentFacingLane < 0) {currentFacingLane = 0;}
+    }
+
+    public void LookDown()
+    {
+        currentFacingLane++;
+        if (currentFacingLane > 2) {currentFacingLane = 2;}
+        if (currentFacingLane < 0) {currentFacingLane = 0;}
     }
 
     public void Damage(int damage)
