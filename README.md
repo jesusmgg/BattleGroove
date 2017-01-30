@@ -1,8 +1,11 @@
 # BattleGroove
-Post GGJ 2017 version.
+Post GGJ 2017 version. Unity 5.5.0f3 project.
 
 ## Changes:
 * Simple AI to play single player mode.
-* Game over screen and going back to main menu.
-* Music tracks credits added.
 * Main menu now adapts correctly to any resolution.
+
+## Credits:
+* Programming: Jesus Gonzalez, Elias Mascheroni.
+* 3D modelling and animation: Francisco Tabakman.
+* Music: audionautix.com, incompetech.com
