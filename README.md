@@ -1,4 +1,4 @@
-# BattleGroove
+# Battle Groove
 Post GGJ 2017 version. Unity 5.5.0f3 project.
 
 ## Changes:
